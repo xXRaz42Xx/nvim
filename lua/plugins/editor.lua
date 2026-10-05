@@ -65,6 +65,23 @@ return {
     opts = {},
   },
 
+  -- Markdown render
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    ft = { "markdown" },
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+    opts = {
+      heading = { enabled = true },
+      code = { enabled = true },
+      hyperlink = { enabled = true },
+      list = { enabled = true },
+      table = { enabled = true },
+    },
+    config = function(_, opts)
+      require("render-markdown").setup(opts)
+    end,
+  },
+
   -- Trouble diagnostics list
   {
     "folke/trouble.nvim",

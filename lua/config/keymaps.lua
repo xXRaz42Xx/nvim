@@ -78,6 +78,9 @@ map("n", "]d", function() vim.diagnostic.jump({ count = 1 }) end, { desc = "Next
 map("n", "<leader>dd", "<cmd>Telescope diagnostics bufnr=0<cr>", { desc = "Buffer diagnostics" })
 map("n", "<leader>dD", "<cmd>Telescope diagnostics<cr>", { desc = "Workspace diagnostics" })
 
+-- Render markdown toggle
+map("n", "<leader>mr", "<cmd>RenderMarkdownToggle<cr>", { desc = "Toggle markdown render" })
+
 -- Formatting
 map({ "n", "v" }, "<leader>mp", function()
   require("conform").format({ lsp_fallback = true, async = false, timeout_ms = 500 })
